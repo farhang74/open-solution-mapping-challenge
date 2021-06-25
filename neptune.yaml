@@ -6,10 +6,10 @@ tags: [solution_5]
 
 parameters:
 # Data Paths
-  data_dir: data/raw
-  meta_dir: data/meta
+  data_dir: /content/data/raw
+  meta_dir: /content/data/meta
   masks_overlayed_prefix: masks_overlayed
-  experiment_dir: data/experiments/mapping_challenge_baseline
+  experiment_dir: /content/data/experiments/mapping_challenge_baseline
 
 # Execution
   overwrite: 0
