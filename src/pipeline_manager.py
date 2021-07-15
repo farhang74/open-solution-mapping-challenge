@@ -1,6 +1,6 @@
 import os
 import shutil
-
+import numpy as np
 import pandas as pd
 import neptune
 import json
@@ -222,6 +222,8 @@ def _generate_prediction_in_chunks(meta_data, pipeline, logger, category_ids, ch
         output = pipeline.transform(data)
         pipeline.clean_cache()
         y_pred = output['y_pred']
+        print(y_pred[0][0].shape)
+        np.save('pred', y_pred[0][0])
 
         prediction_chunk = create_annotations(meta_chunk, y_pred, logger, category_ids, CATEGORY_LAYERS)
         prediction.extend(prediction_chunk)
